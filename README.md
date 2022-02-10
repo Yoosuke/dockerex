@@ -1,6 +1,28 @@
 # Dockerex
 
-**TODO: Add description**
+A mix task that creates a Phoenix framework docker file for studying mix tasks.
+
+When you run ``` mix dokcerfile ```
+Automatically generate dockerfile for the following environment.
+
+```
+FROM elixir:1.12.3
+
+RUN apt-get update && apt-get install -y \
+  inotify-tools git npm && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+RUN mix do \
+  local.hex --force, \
+  local.reber --force, \
+  archive.install --force hex phx.new 1.6.6
+
+```
+TODO:
+Next, we will create a place to create docker-compose.
 
 ## Installation
 
