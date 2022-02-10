@@ -22,7 +22,7 @@ RUN mix do \
 
 ```
 TODO:
-Next, we will create a place to create docker-compose.
+Next,  will create a place to create docker-compose.
 
 ## Installation
 
